@@ -1,0 +1,166 @@
+/*#B26D17, #FFB254, #FFA73A, #0579B2, #3ABEFF*/
+html{
+
+}
+
+html.loading{
+	background:#fff;
+	opacity: 0;
+}
+body{
+	margin: 0px;
+	height: 100vh;
+	background-image: url('images/_MG_5723-HDR.jpg');
+	background-size: cover;
+	background-position: center;
+	
+}
+
+header{
+	height: 60px;
+	width: 100%;
+	/*background-color: #0579B2 ;*/
+	background-color: rgba(0,0,0, 0.5);
+	
+}
+
+.floatright{
+	float: right;
+}
+
+main{
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+	align-items: center;
+	height: 90%;
+}
+	
+#menuIcon{
+cursor: pointer;
+
+}
+
+img{
+	margin: 0px;
+	padding: 0px;
+	transition: 0.3s ease;
+}
+img.rotate{
+	transform: rotate(90deg);
+	transition: 0.3s ease;
+}
+
+/* Navigation*/
+nav {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-flow: column wrap;
+        width: 300px;
+        
+        position: absolute;
+        /* This trasform moves the drawer off canvas. */
+        -webkit-transform: translate(-302px, 0px);
+        transform: translate(-302px, 0px);
+        /* Optionally, we animate the drawer. */
+        transition: transform 0.3s ease;
+        border-radius: 0px 0px 0px 0px;
+}
+      
+nav.open {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+}
+a.menu{
+	text-decoration: none;
+	font-family:'Fjalla One', sans-serif;
+	color: white;
+	width: 100%;
+
+}
+a.menu:hover{
+	color: #FFB254;
+}
+.menuitem{
+	width: 100%;
+	height: 45px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	border: 1px solid;
+	border-color: rgba(255,255,255, 0.2);
+	background-color: rgba(90,90,90, 0.9);
+	transition: width 0.3s ease;
+}
+.menuitem:hover{
+	background-color: rgba(0,0,0, 0.5);
+	width: 110%;
+}
+
+
+
+/*content*/
+#startbox{
+	font-family:'Fjalla One', sans-serif;
+	font-size: 40px;
+	color: white;
+	padding: 10px;
+	border: 2px solid white;
+	cursor: pointer;
+	order: 2;
+	background-color: rgba(0,0,0, 0.5);
+	opacity: 1;
+	transition: opacity 0.8s ease;
+	/*animation: floating 5s infinite;*/
+
+}
+#startbox.hide{
+	opacity: 0;
+	
+}
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes floating {
+    0%   {font-size: 40px}
+    25%  {font-size: 200px;}
+    75%  {font-size: 50px}
+    100% {font-size: 40px;}
+}
+
+/* Standard syntax */
+@keyframes floating {
+    0%   {font-size: 40px;}
+    25%  {font-size: 200px;}
+    75%  {font-size: 50px}
+    100% {font-size: 40px;}
+}
+/*
+.photocontainer{
+	display: flex;
+	justify-content: center;
+	flex-flow: wrap;
+}
+*/
+.photobox{
+	background-color: black;
+	padding: 0px;
+	
+	width: 50%;
+	
+
+}
+
+/*@media screen and (min-width: 600px){
+	nav{
+		
+		order: 0;
+		-webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        height: 90vh;
+	}
+
+}*/

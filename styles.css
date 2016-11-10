@@ -10,7 +10,7 @@ html.loading{
 body{
 	margin: 0px;
 	height: 100vh;
-	background-image: url('images/background.jpg');
+	
 	background-size: cover;
 	background-position: center;
 	
@@ -33,7 +33,7 @@ main{
 	justify-content: center;
 	flex-flow: column;
 	align-items: center;
-	height: 90%;
+	height: 80%;
 }
 	
 #menuIcon{
@@ -66,6 +66,7 @@ nav {
         /* Optionally, we animate the drawer. */
         transition: transform 0.3s ease;
         border-radius: 0px 0px 0px 0px;
+        z-index: 1000;
 }
       
 nav.open {
@@ -113,13 +114,17 @@ a.menu:hover{
 	order: 2;
 	background-color: rgba(0,0,0, 0.5);
 	opacity: 1;
-	transition: opacity 0.8s ease;
+	transition: opacity 1s ease;
+
 	/*animation: floating 5s infinite;*/
 
 }
 #startbox.hide{
 	opacity: 0;
 	
+}
+#startbox.displaynone{
+	display: none;
 }
 
 
@@ -145,13 +150,45 @@ a.menu:hover{
 	flex-flow: wrap;
 }
 */
-.photobox{
-	background-color: black;
-	padding: 0px;
-	
+#photocontainer{
 	width: 50%;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	order: 3;
+	overflow: hidden;
+	/* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(0px, 1200px);
+    transform: translate(0px, 1200px);
+    /* Optionally, we animate the drawer. */
+    transition: transform 2s ease;
+    height: 100%;
+
+}
+#photocontainer.displaynone{
+	display: none;
+}
+#photocontainer.open{
+	-webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    overflow: scroll;
+}
+
+.photobox{
+	
+	width: 100%;
+	margin: auto;
+
+	box-shadow: 10px 10px 10px black;
+	
+    
+    
 	
 
+}
+.photobox.open{
+	-webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
 }
 
 /*@media screen and (min-width: 600px){
